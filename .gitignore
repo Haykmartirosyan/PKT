@@ -1,0 +1,9 @@
+/vendor
+/node_modules
+/public/storage
+.env
+.phpstorm.meta.php
+*.sass-cache
+.DS_Store
+**/.DS_Store
+
