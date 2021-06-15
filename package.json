@@ -25,6 +25,8 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.35",
+        "@fortawesome/react-fontawesome": "^0.1.14",
         "react-cookies": "^0.1.1",
         "react-flash-message": "^1.0.7",
         "react-router-dom": "^5.2.0"

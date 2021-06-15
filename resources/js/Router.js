@@ -8,7 +8,7 @@ import Dashboard from './views/user/Dashboard/Dashboard';
 
 const Main = props => (
     <Switch>
-        <Route exact path='/' component={Home}/>
+        <Route exact path='/' component={Dashboard}/>
         <Route path='/login' component={Login}/>
         <PrivateRoute path='/dashboard' component={Dashboard}/>
         <Route component={NotFound}/>

@@ -1,0 +1,17 @@
+.dashboard-image {
+    margin-left: 10%;
+}
+
+.dashboard-container {
+    margin-top: 50px;
+}
+
+.login-info {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 50px;
+    width:430px;
+    letter-spacing: 0.012em;
+    font-feature-settings: 'cpsp' on;
+}
