@@ -1,16 +1,15 @@
 nav a {
-    font-family: 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 33px;
     letter-spacing: 0.003em;
-    color: #0F1114!important;
+    color: #0F1114 !important;
 }
 
 nav li a.nav-link {
-    padding-left: 0!important;
-    padding-right: 0!important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 a.nav-link.active {
@@ -28,6 +27,7 @@ nav li.nav-item:first-child {
 nav .list-inline {
     margin: 0;
 }
+
 nav .list-inline button {
     margin-right: 30px;
     width: 54px;
@@ -41,11 +41,42 @@ nav .list-inline button {
 }
 
 .active-btn {
-    background: #F6F7F8!important;
+    background: #F6F7F8 !important;
 }
 
 .notification {
     position: absolute;
     top: 5px;
     left: 5px;
+}
+
+
+.subscribe-button {
+    margin-left: 10px;
+}
+
+.copyright-text {
+    color: #424A52;
+}
+
+.subscribe-info {
+    font-style: normal;
+    font-weight: bold;
+    line-height: 50px;
+    letter-spacing: 0.012em;
+    font-feature-settings: 'cpsp' on;
+}
+
+footer {
+    border-top: 2px solid #A9B3BC;
+    padding-top: 60px;
+    margin-top: 63px
+}
+
+footer a {
+    color: black;
+}
+
+.logged-user-block{
+    padding: 10px !important;
 }

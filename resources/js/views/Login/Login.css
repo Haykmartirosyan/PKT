@@ -6,12 +6,40 @@
     margin-top: 50px;
 }
 
+.login-page-image {
+    margin-left: 15%;
+}
+
+.input-group-item {
+    margin-bottom: 20px
+}
+
+.login-inputs {
+    padding: 0 !important;
+}
+
+.login-inputs input {
+    background-color: #F1F2F4;
+    padding: 20px;
+    height: 50px;
+    color: black !important;
+}
+
+.login-inputs span {
+    background-color: #F1F2F4;
+}
+
+.login-button {
+    padding: 10px 25px !important;
+    background-color: #4174DB !important
+}
+
 .login-info {
-    font-family: 'Helvetica Neue', sans-serif;
     font-style: normal;
     font-weight: bold;
     line-height: 50px;
-    width:430px;
+    width: 430px;
     letter-spacing: 0.012em;
     font-feature-settings: 'cpsp' on;
+    margin-top: 100px;
 }

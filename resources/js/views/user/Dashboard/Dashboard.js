@@ -17,6 +17,7 @@ class Home extends Component {
         let token = cookie.load('accessToken');
         if (token) {
             this.setState({isLoggedIn: true});
+            return this.props.history.push('/dashboard');
         } else {
             return this.props.history.push('/login');
         }

@@ -1,74 +1,88 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 
 const Footer = () => {
     return (
-        <footer className="text-center text-lg-start bg-white text-muted">
-                <section className="">
-                    <div className="container-fluid">
-                        <div className="row mt-3">
-                            <div className="col-md-3 mx-auto mb-4">
-                                <h6 className="text-uppercase fw-bold mb-4">
-                                    <i className="fas fa-gem me-3"></i>Company name
-                                </h6>
-                            </div>
-                            <div className="col-md-1 mx-auto mb-4">
-                                <p>
-                                    <a href="#!" className="text-reset">Pay</a>
-                                </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Earn</a>
-                                </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Pool</a>
-                                </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Learn</a>
-                                </p>
-                            </div>
-                            <div className="col-md-1 mx-auto mb-4">
-                                <p>
-                                    <a href="#!" className="text-reset">Pricing</a>
-                                </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Settings</a>
-                                </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Orders</a>
-                                </p>
-                                <p>
-                                    <a href="#!" className="text-reset">Help</a>
-                                </p>
-                            </div>
-
-                            <div className="col-md-4 mx-auto mb-md-0 mb-4">
-                                <h6 className="text-uppercase fw-bold mb-4">
-                                    Contact
-                                </h6>
-                                <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                                <p>
-                                    <i className="fas fa-envelope me-3"></i>
-                                    info@example.com
-                                </p>
-                                <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                                <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
-                            </div>
-
-                            <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                                <h6 className="text-uppercase fw-bold mb-4">
-                                    Contact
-                                </h6>
-                                <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                                <p>
-                                    <i className="fas fa-envelope me-3"></i>
-                                    info@example.com
-                                </p>
-                                <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                                <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
-                            </div>
-
-                        </div>
+        <footer className="">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-2">
+                        <a className="navbar-brand" href="#">
+                            <img src="./images/logo.png" className="img-fluid" alt=""/>
+                        </a>
                     </div>
-            </section>
+
+                    <div className="col-lg-1">
+                        <ul className="navbar-nav mr-auto">
+
+                            <li className="nav-item ">
+                                <Link to="/" className="nav-link">Pay</Link>
+                            </li>
+
+                            <li className="nav-item ">
+                                <Link to="/" className="nav-link">Earn</Link>
+                            </li>
+
+                            <li className="nav-item ">
+                                <Link to="/" className="nav-link">Pool</Link>
+                            </li>
+
+                            <li className="nav-item ">
+                                <Link to="/" className="nav-link">Learn</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div className="col-lg-2">
+                        <ul className="navbar-nav mr-auto">
+
+                            <li className="nav-item ">
+                                <Link to="/" className="nav-link">Pkt Node</Link>
+                            </li>
+
+                            <li className="nav-item ">
+                                <Link to="/" className="nav-link">Pkt Rack</Link>
+                            </li>
+
+                            <li className="nav-item ">
+                                <Link to="/" className="nav-link">Install wallet</Link>
+                            </li>
+
+                            <li className="nav-item ">
+                                <Link to="/" className="nav-link">FAQ</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div className="col-lg-4">
+                        <div className="input-group">
+
+                            <h4 className="subscribe-info">Subscribe to newsletter</h4>
+                            <div className="flex justify-content-between login-inputs">
+
+                                <input id="email" type="email" placeholder="Your email"
+                                       className="form-control border-0" required/>
+
+                                <button
+                                    type="submit"
+                                    className="btn btn-primary  login-button font-weight-bold subscribe-button">Subscribe
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="col-lg-3">
+                        <p>4140 Parker Rd. Allentown, New Mexico 31134</p>
+                        <p className="copyright-text">PKT PAL © Copyright, 2020</p>
+                    </div>
+
+                </div>
+
+
+            </div>
         </footer>
     )
 };

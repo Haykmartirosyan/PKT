@@ -15,6 +15,7 @@ class Header extends Component {
 
     logOut() {
 
+        console.log('asdasds')
         axios.get(api_routes.user.logout()).then(response => {
             return response;
         }).then(json => {
@@ -82,7 +83,8 @@ class Header extends Component {
                             </li>
                             <li className="list-inline-item">
                                 <button>
-                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="notification">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                         xmlns="http://www.w3.org/2000/svg" className="notification">
                                         <circle cx="10" cy="10" r="9" fill="#4174DB" stroke="white" strokeWidth="2"/>
                                     </svg>
 
@@ -101,34 +103,51 @@ class Header extends Component {
                                 </button>
                             </li>
                             <li className="list-inline-item">
-                                <button className="active-btn">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path fillRule="evenodd" clipRule="evenodd"
-                                              d="M8 7C8 9.20914 9.79086 11 12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7ZM10 7C10 8.10457 10.8954 9 12 9C13.1046 9 14 8.10457 14 7C14 5.89543 13.1046 5 12 5C10.8954 5 10 5.89543 10 7Z"
-                                              fill="#0F1114"/>
-                                        <path
-                                            d="M8 15C8 14.4477 8.44772 14 9 14H15C15.5523 14 16 14.4477 16 15V21H18V15C18 13.3431 16.6569 12 15 12H9C7.34315 12 6 13.3431 6 15V21H8V15Z"
-                                            fill="#0F1114"/>
-                                    </svg>
-                                </button>
+                                {/*<button className="active-btn">*/}
+                                {/*    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"*/}
+                                {/*         xmlns="http://www.w3.org/2000/svg">*/}
+                                {/*        <path fillRule="evenodd" clipRule="evenodd"*/}
+                                {/*              d="M8 7C8 9.20914 9.79086 11 12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7ZM10 7C10 8.10457 10.8954 9 12 9C13.1046 9 14 8.10457 14 7C14 5.89543 13.1046 5 12 5C10.8954 5 10 5.89543 10 7Z"*/}
+                                {/*              fill="#0F1114"/>*/}
+                                {/*        <path*/}
+                                {/*            d="M8 15C8 14.4477 8.44772 14 9 14H15C15.5523 14 16 14.4477 16 15V21H18V15C18 13.3431 16.6569 12 15 12H9C7.34315 12 6 13.3431 6 15V21H8V15Z"*/}
+                                {/*            fill="#0F1114"/>*/}
+                                {/*    </svg>*/}
+                                {/*    {this.state.isLoggedIn ?*/}
+                                {/*        <ul className="dropdown-menu logged-user-block">*/}
+                                {/*            <li>*/}
+                                {/*                <span onClick={this.logOut} role="button">Logout</span>*/}
+                                {/*            </li>*/}
+                                {/*        </ul> : ""}*/}
+
+                                {/*</div>*/}
+
+                                <div className="dropdown">
+                                    <button className="active-btn" data-toggle="dropdown">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path fillRule="evenodd" clipRule="evenodd"
+                                                  d="M8 7C8 9.20914 9.79086 11 12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7ZM10 7C10 8.10457 10.8954 9 12 9C13.1046 9 14 8.10457 14 7C14 5.89543 13.1046 5 12 5C10.8954 5 10 5.89543 10 7Z"
+                                                  fill="#0F1114"/>
+                                            <path
+                                                d="M8 15C8 14.4477 8.44772 14 9 14H15C15.5523 14 16 14.4477 16 15V21H18V15C18 13.3431 16.6569 12 15 12H9C7.34315 12 6 13.3431 6 15V21H8V15Z"
+                                                fill="#0F1114"/>
+                                        </svg>
+                                    </button>
+                                    {this.state.isLoggedIn ?
+                                        <ul className="dropdown-menu logged-user-block">
+                                            <li>
+                                                <span onClick={this.logOut} role="button">Logout</span>
+                                            </li>
+                                        </ul> : ""}
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            // <nav className="navbar">
-            //     <ul>
-            //         {this.state.isLoggedIn ?
-            //             <li className="has-sub"><Link to="/dashboard">Dashboard</Link>
-            //                 <p>
-            //                     <a role="button" onClick={this.logOut}>Logout</a>
-            //                 </p>
-            //             </li> : ""}
-            //         {!this.state.isLoggedIn ?
-            //             <li><Link to="/login">Login</Link></li> : ""}
-            //     </ul>
-            // </nav>
+
+
         )
     }
 }
