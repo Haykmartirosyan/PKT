@@ -5,4 +5,29 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.background-dark-blue {
+  background-color: $pkt-dark-blue;
+}
+
+.color-dark-blue {
+  color: $pkt-dark-blue;
+}
+
+.btn {
+  padding: 10px 25px;
+}
+
+.btn-primary {
+  background-color: #4174DB;
+}
+
+.btn-wide {
+  padding-left: 95px;
+  padding-right: 95px
+}
+
+.radius-8 {
+  border-radius: 8px;
+}
