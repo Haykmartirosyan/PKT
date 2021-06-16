@@ -2412,7 +2412,6 @@ var Header = /*#__PURE__*/function (_Component) {
     value: function logOut() {
       var _this2 = this;
 
-      console.log('asdasds');
       axios.get(api_routes.user.logout()).then(function (response) {
         return response;
       }).then(function (json) {
