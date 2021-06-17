@@ -9,6 +9,10 @@
   background-color: #023DB5;
 }
 
+.background-gray {
+  background-color: #F1F2F4;
+}
+
 .color-dark-blue {
   color: #023DB5;
 }
@@ -28,4 +32,8 @@
 
 .radius-8 {
   border-radius: 8px;
+}
+
+.radius-5 {
+  border-radius: 5px;
 }

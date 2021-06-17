@@ -27,8 +27,11 @@
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.35",
         "@fortawesome/react-fontawesome": "^0.1.14",
+        "chart.js": "^3.3.2",
+        "react-chartjs-2": "^3.0.3",
         "react-cookies": "^0.1.1",
         "react-flash-message": "^1.0.7",
+        "react-qr-code": "^1.1.1",
         "react-router-dom": "^5.2.0"
     }
 }

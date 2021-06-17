@@ -11,6 +11,10 @@
   background-color: $pkt-dark-blue;
 }
 
+.background-gray {
+  background-color: $pkt-gray;
+}
+
 .color-dark-blue {
   color: $pkt-dark-blue;
 }
@@ -30,4 +34,9 @@
 
 .radius-8 {
   border-radius: 8px;
+}
+
+
+.radius-5 {
+  border-radius: 5px;
 }
