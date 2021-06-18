@@ -4,6 +4,9 @@ import Header from "../../../../components/Header/Header";
 import Footer from "../../../../components/Footer/Footer";
 import styles from "../Dashboard.module.css";
 import QRCode from "react-qr-code";
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 import {Doughnut, Line} from 'react-chartjs-2';
 
@@ -24,6 +27,8 @@ class Statistics extends Component {
         super(props);
         this.state = {
             isLoggedIn: false,
+            startDate: new Date(),
+            endDate: new Date(),
             user: {
                 email: '',
                 password: '',
@@ -68,6 +73,14 @@ class Statistics extends Component {
         };
     }
 
+    handleStartChange(date) {
+        this.setState({startDate: date});
+    }
+
+    handleEndChange(date) {
+        this.setState({endDate: date});
+    }
+
     render() {
         return (
             <div className="content">
@@ -96,7 +109,8 @@ class Statistics extends Component {
                                 <div className={`pt-3 pb-4 mb-3 `}>
                                     <p>PKT Wallet Address</p>
 
-                                    <input type="text" className="p-2 radius-5" placeholder='0x49b008eb4CB7de...'/>
+                                    <input type="text" className="p-2 radius-5"
+                                           placeholder='pkt1qltkw5gwdaka9c566kqhwuaqa0d87jkywea3hv7'/>
                                     <button className="btn bg-white ml-2 p-2">
                                         <svg width="23" height="23" viewBox="0 0 18 19" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +133,7 @@ class Statistics extends Component {
 
                                 </div>
                                 <div className={`pl-4 pr-4`}>
-                                    <QRCode value="0x49b008eb4CB7de"/>
+                                    <QRCode value="pkt1qltkw5gwdaka9c566kqhwuaqa0d87jkywea3hv7"/>
                                 </div>
 
                             </div>
@@ -151,13 +165,71 @@ class Statistics extends Component {
                             </div>
                         </div>
 
-                        <div className="col-12 col-md-12 col-lg-12 mt-4 border radius-8">
+                        <div className="col-12 col-md-12 col-lg-12 mt-4 border">
                             <div className={`p-3 radius-8 `}>
                                 <div className={`pt-2`}>
-                                    <table className="table" >
+                                    <div className={`pb-3`}>
+
+                                        <Link to="/"
+                                              className={`btn text-white font-weight-bold background-black radius-0`}>
+                                            Transactions
+                                        </Link>
+
+                                        <Link to="/statistics"
+                                              className={`btn ml-1 text-black font-weight-bold`}>
+                                            Mining income
+                                        </Link>
+                                    </div>
+
+                                    <div className={`pb-3`}>
+
+                                        <span>Export</span>
+
+                                    </div>
+
+                                    <div className={'container'}>
+                                        <div className="row">
+                                            <DatePicker className={'background-gray p-2 mr-3  radius-8 '}
+                                                        selected={this.state.startDate}
+                                                        onChange={(date) => this.handleStartChange(date)}/>
+
+                                            <DatePicker className={'background-gray p-2  radius-8'}
+                                                        selected={this.state.endDate}
+                                                        onChange={(date) => this.handleEndChange(date)}/>
+
+                                            <div className={'col-12 col-md-2 col-lg-2'}>
+                                                <select name=""
+                                                        className={'form-group background-gray p-2 radius-8 w-100'}
+                                                        id="">
+                                                    <option value="">Transaction type</option>
+                                                </select>
+                                            </div>
+
+                                            <div className={'col-12 col-md-2 col-lg-2'}>
+                                                <select name=""
+                                                        className={'form-group background-gray p-2 radius-8 w-100'}
+                                                        id="">
+                                                    <option value="">Device</option>
+                                                </select>
+                                            </div>
+
+                                            <div className={'col-12 col-md-3 col-lg-3 text-right'}>
+                                                <button
+                                                    className="radius-8 background-dark-blue text-white font-weight-bold p-2">View
+                                                    in Block Explorer
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <table className="table">
                                         <thead>
                                         <tr>
-                                            <th className={'border-0'} >Date</th>
+                                            <th className={'border-0'}>Date</th>
                                             <th className={'border-0'}>Type</th>
                                             <th className={'border-0'}>Wallet address</th>
                                             <th className={'border-0'}>Recipient's name</th>
@@ -167,190 +239,83 @@ class Statistics extends Component {
 
                                         <tbody>
                                         <tr data-toggle="collapse" data-target="#demo1" className="accordion-toggle">
-                                            <td className={'border-0'}>Carlos</td>
-                                            <td className={'border-0'}>Mathias</td>
-                                            <td className={'border-0'}>Leme</td>
-                                            <td className={'border-0'}>SP</td>
-                                            <td className={'border-0'}>new</td>
+                                            <td className={'border-0'}>1 June, 2020</td>
+                                            <td className={'border-0'}>Sent</td>
+                                            <td className={'border-0'}>0x310E6721e8fa5BE1AD032ADbAAf120</td>
+                                            <td className={'border-0'}>Amazon</td>
+                                            <td className={'border-0'}>+ 20,254.20 PKT</td>
                                             <th className={'border-0'} data-toggle="collapse" data-target="#demo1">
-                                                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M18.2969 1.48633L9.79688 9.98633L1.29687 1.48633" stroke="#141414" strokeWidth="2"/>
+                                                <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M18.2969 1.48633L9.79688 9.98633L1.29687 1.48633"
+                                                          stroke="#141414" strokeWidth="2"/>
                                                 </svg>
                                             </th>
                                         </tr>
 
                                         <tr>
-                                            <td colSpan="12" className="hiddenRow">
-                                                <div className="accordian-body collapse" id="demo1">
-                                                    <table className="table">
-                                                        <thead>
-                                                        <tr className="info">
-                                                            <th>Job</th>
-                                                            <th>Company</th>
-                                                            <th>Salary</th>
-                                                            <th>Date On</th>
-                                                            <th>Date off</th>
-                                                            <th>Action</th>
-                                                        </tr>
-                                                        </thead>
-
-                                                        <tbody>
-
-                                                        <tr data-toggle="collapse" className="accordion-toggle"
-                                                            data-target="#demo10">
-                                                            <td>Enginner Software</td>
-                                                            <td>Google</td>
-                                                            <td>U$8.00000</td>
-                                                            <td> 2016/09/27</td>
-                                                            <td> 2017/09/27</td>
-                                                            <td>
-                                                                <a href="#" className="btn btn-default btn-sm">
-                                                                    <i className="glyphicon glyphicon-cog"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
+                                            <td colSpan="12" className="hiddenRow background-gray radius-8">
+                                                <div className="accordian-body collapse  p-2" id="demo1">
 
 
-                                                        <tr>
-                                                            <td>Scrum Master</td>
-                                                            <td>Google</td>
-                                                            <td>U$8.00000</td>
-                                                            <td> 2016/09/27</td>
-                                                            <td> 2017/09/27</td>
-                                                            <td><a href="#" className="btn btn-default btn-sm">
-                                                                <i className="glyphicon glyphicon-cog"></i>
-                                                            </a>
-                                                            </td>
-                                                        </tr>
+                                                    <div className={'container'}>
+                                                        <div className="row">
+
+                                                            <div className={'col-12 col-md-6 col-lg-6'}>
+                                                                From
+                                                            </div>
+                                                            <div className={'col-12 col-md-6 col-lg-6'}>
+                                                                To
+                                                            </div>
+
+                                                            <div className={'col-12 col-md-5 col-lg-5'}>
+
+                                                                <div className={'bg-white p-3 radius-8 border flex justify-content-between'}>
+
+                                                                    <span >0x310E6721e8fa5BE1AD032...</span>
+                                                                    <span >30, 211.76 PKT</span>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div className={'col-12 col-md-1 col-lg-1 flex justify-content-center'}>
+                                                                <svg width="24" height="10" viewBox="0 0 24 10"
+                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M23.0676 5.07194L18.8178 0.908203L17.406 2.30081L19.2414 4.09904L0.932347 4.09707L0.932129 6.0632L19.2368 6.06516L17.4153 7.86183L18.8319 9.24974L23.0676 5.07194Z"
+                                                                        fill="#141414"/>
+                                                                </svg>
+
+                                                            </div>
 
 
-                                                        <tr>
-                                                            <td>Back-end</td>
-                                                            <td>Google</td>
-                                                            <td>U$8.00000</td>
-                                                            <td> 2016/09/27</td>
-                                                            <td> 2017/09/27</td>
-                                                            <td><a href="#" className="btn btn-default btn-sm">
-                                                                <i className="glyphicon glyphicon-cog"></i>
-                                                            </a>
-                                                            </td>
-                                                        </tr>
+                                                            <div className={'col-12 col-md-5 col-lg-5'}>
+
+                                                                <div className={'bg-white p-3 radius-8 border flex justify-content-between'}>
+
+                                                                    <span >0x310E6721e8fa5BE1AD032...</span>
+                                                                    <span >30, 211.76 PKT</span>
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div className={'col-12 col-md-5 col-lg-5 mt-3'}>
+
+                                                                <Link to="/statistics"
+                                                                      className={'btn text-black underline pl-0'}>
+                                                                    View transaction in Block Explorer
+                                                                </Link>
 
 
-                                                        <tr>
-                                                            <td>Front-end</td>
-                                                            <td>Google</td>
-                                                            <td>U$8.00000</td>
-                                                            <td> 2016/09/27</td>
-                                                            <td> 2017/09/27</td>
-                                                            <td><a href="#" className="btn btn-default btn-sm">
-                                                                <i className="glyphicon glyphicon-cog"></i>
-                                                            </a>
-                                                            </td>
-                                                        </tr>
+                                                            </div>
 
 
-                                                        </tbody>
-                                                    </table>
+                                                        </div>
+                                                    </div>
 
                                                 </div>
                                             </td>
                                         </tr>
-
-
-
-
-                                        <tr data-toggle="collapse" data-target="#demo2" className="accordion-toggle">
-                                            <td className={'border-0'}>Carlos</td>
-                                            <td className={'border-0'}>Mathias</td>
-                                            <td className={'border-0'}>Leme</td>
-                                            <td className={'border-0'}>SP</td>
-                                            <td className={'border-0'}>new</td>
-                                            <th className={'border-0'} data-toggle="collapse" data-target="#demo2">
-                                                <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M18.2969 1.48633L9.79688 9.98633L1.29687 1.48633" stroke="#141414" strokeWidth="2"/>
-                                                </svg>
-                                            </th>
-                                        </tr>
-
-                                        <tr>
-                                            <td colSpan="12" className="hiddenRow">
-                                                <div className="accordian-body collapse" id="demo2">
-                                                    <table className="table">
-                                                        <thead>
-                                                        <tr className="info">
-                                                            <th>Job</th>
-                                                            <th>Company</th>
-                                                            <th>Salary</th>
-                                                            <th>Date On</th>
-                                                            <th>Date off</th>
-                                                            <th>Action</th>
-                                                        </tr>
-                                                        </thead>
-
-                                                        <tbody>
-
-                                                        <tr data-toggle="collapse" className="accordion-toggle"
-                                                            data-target="#demo10">
-                                                            <td>Enginner Software</td>
-                                                            <td>Google</td>
-                                                            <td>U$8.00000</td>
-                                                            <td> 2016/09/27</td>
-                                                            <td> 2017/09/27</td>
-                                                            <td>
-                                                                <a href="#" className="btn btn-default btn-sm">
-                                                                    <i className="glyphicon glyphicon-cog"></i>
-                                                                </a>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>Scrum Master</td>
-                                                            <td>Google</td>
-                                                            <td>U$8.00000</td>
-                                                            <td> 2016/09/27</td>
-                                                            <td> 2017/09/27</td>
-                                                            <td><a href="#" className="btn btn-default btn-sm">
-                                                                <i className="glyphicon glyphicon-cog"></i>
-                                                            </a>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>Back-end</td>
-                                                            <td>Google</td>
-                                                            <td>U$8.00000</td>
-                                                            <td> 2016/09/27</td>
-                                                            <td> 2017/09/27</td>
-                                                            <td><a href="#" className="btn btn-default btn-sm">
-                                                                <i className="glyphicon glyphicon-cog"></i>
-                                                            </a>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        <tr>
-                                                            <td>Front-end</td>
-                                                            <td>Google</td>
-                                                            <td>U$8.00000</td>
-                                                            <td> 2016/09/27</td>
-                                                            <td> 2017/09/27</td>
-                                                            <td><a href="#" className="btn btn-default btn-sm">
-                                                                <i className="glyphicon glyphicon-cog"></i>
-                                                            </a>
-                                                            </td>
-                                                        </tr>
-
-
-                                                        </tbody>
-                                                    </table>
-
-                                                </div>
-                                            </td>
-                                        </tr>
-
 
                                         </tbody>
                                     </table>

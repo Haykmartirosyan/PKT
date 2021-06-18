@@ -13,6 +13,10 @@
   background-color: #F1F2F4;
 }
 
+.background-black {
+  background-color: #22262C;
+}
+
 .color-dark-blue {
   color: #023DB5;
 }
@@ -36,4 +40,8 @@
 
 .radius-5 {
   border-radius: 5px;
+}
+
+.radius-0 {
+  border-radius: 0;
 }
