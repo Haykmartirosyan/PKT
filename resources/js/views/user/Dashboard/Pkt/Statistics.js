@@ -187,7 +187,7 @@ class Statistics extends Component {
 
                                     </div>
 
-                                    <div className={'container'}>
+                                    <div className={'container border-bottom pb-4 mb-3'}>
                                         <div className="row">
                                             <DatePicker className={'background-gray p-2 mr-3  radius-8 '}
                                                         selected={this.state.startDate}
@@ -199,7 +199,7 @@ class Statistics extends Component {
 
                                             <div className={'col-12 col-md-2 col-lg-2'}>
                                                 <select name=""
-                                                        className={'form-group background-gray p-2 radius-8 w-100'}
+                                                        className={'form-group background-gray p-2 radius-8'}
                                                         id="">
                                                     <option value="">Transaction type</option>
                                                 </select>
@@ -215,7 +215,7 @@ class Statistics extends Component {
 
                                             <div className={'col-12 col-md-3 col-lg-3 text-right'}>
                                                 <button
-                                                    className="radius-8 background-dark-blue text-white font-weight-bold p-2">View
+                                                    className="radius-8 background-dark-blue text-white p-2 pl-4 pr-4">View
                                                     in Block Explorer
                                                 </button>
                                             </div>
@@ -244,7 +244,8 @@ class Statistics extends Component {
                                             <td className={'border-0'}>0x310E6721e8fa5BE1AD032ADbAAf120</td>
                                             <td className={'border-0'}>Amazon</td>
                                             <td className={'border-0'}>+ 20,254.20 PKT</td>
-                                            <th className={'border-0'} data-toggle="collapse" data-target="#demo1">
+                                            <th className={'border-0 cursor-pointer'} data-toggle="collapse"
+                                                data-target="#demo1">
                                                 <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
                                                      xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M18.2969 1.48633L9.79688 9.98633L1.29687 1.48633"
@@ -254,10 +255,9 @@ class Statistics extends Component {
                                         </tr>
 
                                         <tr>
-                                            <td colSpan="12" className="hiddenRow background-gray radius-8">
-                                                <div className="accordian-body collapse  p-2" id="demo1">
-
-
+                                            <td colSpan="12"
+                                                className="hiddenRow background-gray radius-5 border-0 p-0">
+                                                <div className="accordian-body p-2 mt-3 collapse" id="demo1">
                                                     <div className={'container'}>
                                                         <div className="row">
 
@@ -270,15 +270,17 @@ class Statistics extends Component {
 
                                                             <div className={'col-12 col-md-5 col-lg-5'}>
 
-                                                                <div className={'bg-white p-3 radius-8 border flex justify-content-between'}>
+                                                                <div
+                                                                    className={'bg-white p-3 radius-8 border flex justify-content-between'}>
 
-                                                                    <span >0x310E6721e8fa5BE1AD032...</span>
-                                                                    <span >30, 211.76 PKT</span>
+                                                                    <span>0x310E6721e8fa5BE1AD032...</span>
+                                                                    <span>30, 211.76 PKT</span>
 
                                                                 </div>
                                                             </div>
 
-                                                            <div className={'col-12 col-md-1 col-lg-1 flex justify-content-center'}>
+                                                            <div
+                                                                className={'col-12 col-md-1 col-lg-1 flex justify-content-center'}>
                                                                 <svg width="24" height="10" viewBox="0 0 24 10"
                                                                      fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                     <path
@@ -291,32 +293,26 @@ class Statistics extends Component {
 
                                                             <div className={'col-12 col-md-5 col-lg-5'}>
 
-                                                                <div className={'bg-white p-3 radius-8 border flex justify-content-between'}>
-
-                                                                    <span >0x310E6721e8fa5BE1AD032...</span>
-                                                                    <span >30, 211.76 PKT</span>
+                                                                <div
+                                                                    className={'bg-white p-3 radius-8 border flex justify-content-between'}>
+                                                                    <span>0x310E6721e8fa5BE1AD032...</span>
+                                                                    <span>30, 211.76 PKT</span>
 
                                                                 </div>
                                                             </div>
 
                                                             <div className={'col-12 col-md-5 col-lg-5 mt-3'}>
-
                                                                 <Link to="/statistics"
                                                                       className={'btn text-black underline pl-0'}>
                                                                     View transaction in Block Explorer
                                                                 </Link>
-
-
                                                             </div>
-
-
                                                         </div>
                                                     </div>
 
                                                 </div>
                                             </td>
                                         </tr>
-
                                         </tbody>
                                     </table>
 
