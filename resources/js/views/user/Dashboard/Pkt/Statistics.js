@@ -187,134 +187,147 @@ class Statistics extends Component {
 
                                     </div>
 
-                                    <div className={'container border-bottom pb-4 mb-3'}>
-                                        <div className="row">
-                                            <DatePicker className={'background-gray p-2 mr-3  radius-8 '}
-                                                        selected={this.state.startDate}
-                                                        onChange={(date) => this.handleStartChange(date)}/>
-
-                                            <DatePicker className={'background-gray p-2  radius-8'}
-                                                        selected={this.state.endDate}
-                                                        onChange={(date) => this.handleEndChange(date)}/>
-
-                                            <div className={'col-12 col-md-2 col-lg-2'}>
-                                                <select name=""
-                                                        className={'form-group background-gray p-2 radius-8'}
-                                                        id="">
-                                                    <option value="">Transaction type</option>
-                                                </select>
+                                    <div className={'border-bottom pb-4 mb-3'}>
+                                        <div className="row align-items-center">
+                                            <div className={`col-12 col-md-6 col-lg-4`}>
+                                                <div className={`row align-items-center`}>
+                                                    <div className={`col-6`}>
+                                                        <DatePicker className={'background-gray p-2  radius-8 w-100'}
+                                                                    selected={this.state.endDate}
+                                                                    onChange={(date) => this.handleEndChange(date)}/>
+                                                    </div>
+                                                    <div className={`col-6`}>
+                                                        <DatePicker className={'background-gray p-2 mr-3  radius-8 w-100'}
+                                                                    selected={this.state.startDate}
+                                                                    onChange={(date) => this.handleStartChange(date)}/>
+                                                    </div>
+                                                </div>
                                             </div>
 
-                                            <div className={'col-12 col-md-2 col-lg-2'}>
-                                                <select name=""
-                                                        className={'form-group background-gray p-2 radius-8 w-100'}
-                                                        id="">
-                                                    <option value="">Device</option>
-                                                </select>
-                                            </div>
+                                            <div className={`col-12 col-lg-8 mt-3 mt-lg-0`}>
+                                                <div className={`row align-items-center flex-md-nowrap flex-wrap`}>
+                                                    <div className={`w-100 mr-3`}>
+                                                        <select name=""
+                                                                className={'form-control background-gray mb-0 w-100 border-0 radius-8'}
+                                                                id="">
+                                                            <option value="">Transaction type</option>
+                                                        </select>
+                                                    </div>
 
-                                            <div className={'col-12 col-md-3 col-lg-3 text-right'}>
-                                                <button
-                                                    className="radius-8 background-dark-blue text-white p-2 pl-4 pr-4">View
-                                                    in Block Explorer
-                                                </button>
-                                            </div>
+                                                    <div className={`w-100 mr-3 mt-md-0 mt-3`}>
+                                                        <select name=""
+                                                                className={'form-control background-gray w-100 mb-0 border-0 radius-8'}
+                                                                id="">
+                                                            <option value="">Device</option>
+                                                        </select>
+                                                    </div>
 
+                                                    <div className={`w-100 mt-md-0 mt-3`}>
+                                                        <button
+                                                            className="background-dark-blue text-white p-2 pl-4 pr-4 text-nowrap radius-8">View
+                                                            in Block Explorer
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
 
 
                                     </div>
 
 
-                                    <table className="table">
-                                        <thead>
-                                        <tr>
-                                            <th className={'border-0'}>Date</th>
-                                            <th className={'border-0'}>Type</th>
-                                            <th className={'border-0'}>Wallet address</th>
-                                            <th className={'border-0'}>Recipient's name</th>
-                                            <th className={'border-0'}>Amount</th>
-                                        </tr>
-                                        </thead>
+                                    <div className={`table-responsive`}>
+                                        <table className="table">
+                                            <thead>
+                                            <tr>
+                                                <th className={'border-0'}>Date</th>
+                                                <th className={'border-0'}>Type</th>
+                                                <th className={'border-0'}>Wallet address</th>
+                                                <th className={'border-0'}>Recipient's name</th>
+                                                <th className={'border-0'}>Amount</th>
+                                            </tr>
+                                            </thead>
 
-                                        <tbody>
-                                        <tr data-toggle="collapse" data-target="#demo1" className="accordion-toggle">
-                                            <td className={'border-0'}>1 June, 2020</td>
-                                            <td className={'border-0'}>Sent</td>
-                                            <td className={'border-0'}>0x310E6721e8fa5BE1AD032ADbAAf120</td>
-                                            <td className={'border-0'}>Amazon</td>
-                                            <td className={'border-0'}>+ 20,254.20 PKT</td>
-                                            <th className={'border-0 cursor-pointer'} data-toggle="collapse"
-                                                data-target="#demo1">
-                                                <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M18.2969 1.48633L9.79688 9.98633L1.29687 1.48633"
-                                                          stroke="#141414" strokeWidth="2"/>
-                                                </svg>
-                                            </th>
-                                        </tr>
+                                            <tbody>
+                                            <tr data-toggle="collapse" data-target="#demo1" className="accordion-toggle">
+                                                <td className={'border-0'}>1 June, 2020</td>
+                                                <td className={'border-0'}>Sent</td>
+                                                <td className={'border-0'}>0x310E6721e8fa5BE1AD032ADbAAf120</td>
+                                                <td className={'border-0'}>Amazon</td>
+                                                <td className={'border-0'}>+ 20,254.20 PKT</td>
+                                                <th className={'border-0 cursor-pointer'} data-toggle="collapse"
+                                                    data-target="#demo1">
+                                                    <svg width="20" height="12" viewBox="0 0 20 12" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M18.2969 1.48633L9.79688 9.98633L1.29687 1.48633"
+                                                              stroke="#141414" strokeWidth="2"/>
+                                                    </svg>
+                                                </th>
+                                            </tr>
 
-                                        <tr>
-                                            <td colSpan="12"
-                                                className="hiddenRow background-gray radius-5 border-0 p-0">
-                                                <div className="accordian-body p-2 mt-3 collapse" id="demo1">
-                                                    <div className={'container'}>
-                                                        <div className="row">
+                                            <tr>
+                                                <td colSpan="12"
+                                                    className="hiddenRow background-gray radius-5 border-0 p-0">
+                                                    <div className="accordian-body p-2 mt-3 collapse" id="demo1">
+                                                        <div className={'container'}>
+                                                            <div className="row">
 
-                                                            <div className={'col-12 col-md-6 col-lg-6'}>
-                                                                From
-                                                            </div>
-                                                            <div className={'col-12 col-md-6 col-lg-6'}>
-                                                                To
-                                                            </div>
+                                                                <div className={'col-12 col-md-6 col-lg-6'}>
+                                                                    From
+                                                                </div>
+                                                                <div className={'col-12 col-md-6 col-lg-6'}>
+                                                                    To
+                                                                </div>
 
-                                                            <div className={'col-12 col-md-5 col-lg-5'}>
+                                                                <div className={'col-12 col-md-5 col-lg-5'}>
+
+                                                                    <div
+                                                                        className={'bg-white p-3 radius-8 border flex justify-content-between'}>
+
+                                                                        <span>0x310E6721e8fa5BE1AD032...</span>
+                                                                        <span>30, 211.76 PKT</span>
+
+                                                                    </div>
+                                                                </div>
 
                                                                 <div
-                                                                    className={'bg-white p-3 radius-8 border flex justify-content-between'}>
-
-                                                                    <span>0x310E6721e8fa5BE1AD032...</span>
-                                                                    <span>30, 211.76 PKT</span>
-
-                                                                </div>
-                                                            </div>
-
-                                                            <div
-                                                                className={'col-12 col-md-1 col-lg-1 flex justify-content-center'}>
-                                                                <svg width="24" height="10" viewBox="0 0 24 10"
-                                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path
-                                                                        d="M23.0676 5.07194L18.8178 0.908203L17.406 2.30081L19.2414 4.09904L0.932347 4.09707L0.932129 6.0632L19.2368 6.06516L17.4153 7.86183L18.8319 9.24974L23.0676 5.07194Z"
-                                                                        fill="#141414"/>
-                                                                </svg>
-
-                                                            </div>
-
-
-                                                            <div className={'col-12 col-md-5 col-lg-5'}>
-
-                                                                <div
-                                                                    className={'bg-white p-3 radius-8 border flex justify-content-between'}>
-                                                                    <span>0x310E6721e8fa5BE1AD032...</span>
-                                                                    <span>30, 211.76 PKT</span>
+                                                                    className={'col-12 col-md-1 col-lg-1 flex justify-content-center'}>
+                                                                    <svg width="24" height="10" viewBox="0 0 24 10"
+                                                                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M23.0676 5.07194L18.8178 0.908203L17.406 2.30081L19.2414 4.09904L0.932347 4.09707L0.932129 6.0632L19.2368 6.06516L17.4153 7.86183L18.8319 9.24974L23.0676 5.07194Z"
+                                                                            fill="#141414"/>
+                                                                    </svg>
 
                                                                 </div>
-                                                            </div>
 
-                                                            <div className={'col-12 col-md-5 col-lg-5 mt-3'}>
-                                                                <Link to="/statistics"
-                                                                      className={'btn text-black underline pl-0'}>
-                                                                    View transaction in Block Explorer
-                                                                </Link>
+
+                                                                <div className={'col-12 col-md-5 col-lg-5'}>
+
+                                                                    <div
+                                                                        className={'bg-white p-3 radius-8 border flex justify-content-between'}>
+                                                                        <span>0x310E6721e8fa5BE1AD032...</span>
+                                                                        <span>30, 211.76 PKT</span>
+
+                                                                    </div>
+                                                                </div>
+
+                                                                <div className={'col-12 col-md-5 col-lg-5 mt-3'}>
+                                                                    <Link to="/statistics"
+                                                                          className={'btn text-black underline pl-0'}>
+                                                                        View transaction in Block Explorer
+                                                                    </Link>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
 
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
 
                                 </div>
                             </div>
