@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Yarn Build
+      - name: NPM Build
         run: |
-          yarn install
-          yarn prod
+          npm install
+          npm prod
           cat public/mix-manifest.json # See asset versions in log
       - name: Upload build files
         uses: actions/upload-artifact@v1
@@ -29,7 +29,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@master
         with:
-          php-version: 7.3 # Use your PHP version
+          php-version: 7.4 # Use your PHP version
           extension-csv: mbstring, bcmath # Setup any required extensions for tests
       - name: Composer install
         run: composer install
@@ -50,7 +50,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@master
         with:
-          php-version: 7.3
+          php-version: 7.4
           extension-csv: mbstring, bcmath
       - name: Composer install
         run: composer install
