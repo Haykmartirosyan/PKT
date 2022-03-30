@@ -36,7 +36,7 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
       - name: Install Dependencies
-        run: composer install --optimize-autoloader --no-interaction --prefer-dist --ignore-platform-reqs --no-dev
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
       - name: Run Tests
         run: ./vendor/bin/phpunit
   deploy:
