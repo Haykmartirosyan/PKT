@@ -28,13 +28,13 @@ jobs:
       - uses: actions/checkout@v1
       - name: Setup PHP
         uses: shivammathur/setup-php@master
+        with:
+          php-version: 7.4
+          extension-csv: mbstring, bcmath
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Generate key
         run: php artisan key:generate
-        with:
-          php-version: 7.4
-          extension-csv: mbstring, bcmath
       - name: Install Dependencies
         run: composer install --optimize-autoloader --no-interaction --prefer-dist --ignore-platform-reqs --no-dev
       - name: Run Tests
