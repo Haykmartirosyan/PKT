@@ -20,8 +20,12 @@ add('shared_dirs', []);
 add('writable_dirs', []);
 
 // Hosts
-host('project.com')
-    ->set('deploy_path', '~/{{application}}');    
+
+host('production.app.com') // Name of the server
+->hostname('178.128.84.15') // Hostname or IP address
+->stage('master') // Deployment stage (production, staging, etc)
+->user('root') // SSH user
+->set('deploy_path', '/var/www'); // Deploy path
     
 // Tasks
 
